@@ -1,0 +1,87 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Each full-page section */
+section {
+    width: 100%;
+    height: 90vh;
+    /* Show 10vh of next section */
+
+    scroll-snap-align: start;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Scroll wrapper */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+/* Inner container to center content */
+.inner-container {
+    margin: 0 auto;
+    padding: 0 5rem;
+}
+
+.container{
+    max-width: 1500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Sample sections */
+.section1 {
+    background: blue;
+    color: white;
+}
+
+.section2 {
+    background: red;
+    color: white;
+}
+
+.section3 {
+    background: rgb(0, 98, 255);
+    color: white;
+}
+
+.section4 {
+    background: rgb(191, 191, 28);
+    color: white;
+}
+
+.section5 {
+    background: rgb(27, 152, 21);
+    color: white;
+}
+
+.section6 {
+    background: rgb(171, 29, 223);
+    color: white;
+}
+
+.section7 {
+    background: rgb(158, 29, 50);
+    color: white;
+}
