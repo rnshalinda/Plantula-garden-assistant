@@ -32,146 +32,148 @@
         </nav>
 
         <!-- table -->
-        <div class="container" style="margin: 20px;">
+        <div class="container container-table" style="margin: 20px;">
             <div class="row row-cols-2">
-                <!-- Q&A form  -->
-                <div class="col">
-                    <div class="container" id="Qform">
+                    <!-- Q&A form  -->
+                    <div class="col">
+                        <div class="container box" id="Qform">
 
-                        <div class="row">
-                            <div class="col-4">Plant name:</div>
-                            <div class="col-7">
-                                <input id="plantName" class="form-control" type="text" placeholder="e.g. Tomato" />
+                            <div class="row">
+                                <div class="col-5">Plant name:</div>
+                                <div class="col-5">
+                                    <input id="plantName" class="form-control" type="text" placeholder="e.g. Tomato" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Environment:</div>
-                            <div class="col-7">
-                                <input id="location" class="form-control" type="text"
-                                    placeholder="e.g. Indoor, Balcony, Garden, Greenhouse" />
+                            <div class="row">
+                                <div class="col-5">Environment:</div>
+                                <div class="col-6">
+                                    <input id="location" class="form-control" type="text"
+                                        placeholder="e.g. Indoor, Balcony, Garden, Greenhouse" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Climate condition:</div>
-                            <div class="col-7">
-                                <select id="climate" class="form-control">
-                                    <option value="Did not mention climate condition">--Select Climate--</option>
-                                    <option value="Tropical">Tropical – Hot, humid, year-round rain</option>
-                                    <option value="Subtropical">Subtropical – Warm, humid summers, mild winters</option>
-                                    <option value="Temperate">Temperate – Four seasons, moderate rainfall</option>
-                                    <option value="Mediterranean">Mediterranean – Hot, dry summers; cool, wet winters</option>
-                                    <option value="Arid">Arid / Desert – Very dry, hot days, cool nights</option>
-                                    <option value="Semi-arid">Semi-arid – Low rainfall but not extreme like deserts</option>
-                                    <option value="Continental">Continental – Large temperature variations, cold winters</option>
-                                    <option value="Mountain">Mountain – Cool to cold year-round, short growing seasons</option>
-                                    <option value="Tundra">Tundra / Polar – Extremely cold, minimal growing potential</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-5">Climate condition:</div>
+                                <div class="col-7">
+                                    <select id="climate" class="form-control">
+                                        <option value="Did not mention climate condition">--Select Climate--</option>
+                                        <option value="Tropical">Tropical – Hot, humid, year-round rain</option>
+                                        <option value="Subtropical">Subtropical – Warm, humid summers, mild winters</option>
+                                        <option value="Temperate">Temperate – Four seasons, moderate rainfall</option>
+                                        <option value="Mediterranean">Mediterranean – Hot, dry summers; cool, wet winters</option>
+                                        <option value="Arid">Arid / Desert – Very dry, hot days, cool nights</option>
+                                        <option value="Semi-arid">Semi-arid – Low rainfall but not extreme like deserts</option>
+                                        <option value="Continental">Continental – Large temperature variations, cold winters</option>
+                                        <option value="Mountain">Mountain – Cool to cold year-round, short growing seasons</option>
+                                        <option value="Tundra">Tundra / Polar – Extremely cold, minimal growing potential</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Average Temperature (°C):</div>
-                            <div class="col-3">
-                                <input id="temp" class="form-control" type="number" placeholder="°C" min="-50"
-                                    max="100" />
+                            <div class="row">
+                                <div class="col-5">Average Temperature (°C):</div>
+                                <div class="col-2">
+                                    <input id="temp" class="form-control" type="number" placeholder="°C" min="-50"max="100" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Sunlight Hours:</div>
-                            <div class="col-3">
-                                <input id="sunlightHours" class="form-control" type="number" placeholder="hours" min="0"
-                                    max="24" />
+                            <div class="row">
+                                <div class="col-5">Sunlight Hours:</div>
+                                <div class="col-2">
+                                    <input id="sunlightHours" class="form-control" type="number" placeholder="h" min="0"
+                                        max="24" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Water Availability:</div>
-                            <div class="col-7">
-                                <input id="water" class="form-control" type="text"
-                                    placeholder="e.g. Daily, Twice a week, Rarely" />
+                            <div class="row">
+                                <div class="col-5">Water Availability:</div>
+                                <div class="col-6">
+                                    <input id="water" class="form-control" type="text"
+                                        placeholder="e.g. Daily, Twice a week, Rarely" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Soil Type:</div>
-                            <div class="col-7">
-                                <input id="soil" class="form-control" type="text"
-                                    placeholder="e.g. Garden soil, Clay, Sandy, Not sure" />
+                            <div class="row">
+                                <div class="col-5">Soil Type:</div>
+                                <div class="col-7">
+                                    <input id="soil" class="form-control" type="text"
+                                        placeholder="e.g. Garden soil, Clay, Sandy, Not sure" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Container Type:</div>
-                            <div class="col-7">
-                                <input id="container" class="form-control" type="text"
-                                    placeholder="e.g. Pot, Ground, Raised bed" />
+                            <div class="row">
+                                <div class="col-5">Container Type:</div>
+                                <div class="col-7">
+                                    <input id="container" class="form-control" type="text"
+                                        placeholder="e.g. Pot, Ground, Raised bed" />
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Nutrients:</div>
-                            <div class="col-4">
-                                <select id="nutrients" class="form-select">
-                                    <option value="nutrients but didn't specified what type">-- Not specified --
-                                    </option>
-                                    <option value="only fertilizer">Only Fertilizer</option>
-                                    <option value="only compost">Only Compost</option>
-                                    <option value="fertilizer & compost">Both</option>
-                                    <option value="no added fertilizer & compost">Neither</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-5">Nutrients:</div>
+                                <div class="col-4">
+                                    <select id="nutrients" class="form-select">
+                                        <option value="nutrients but didn't specified what type">-- Not specified --</option>
+                                        <option value="only fertilizer">Only Fertilizer</option>
+                                        <option value="only compost">Only Compost</option>
+                                        <option value="fertilizer & compost">Both</option>
+                                        <option value="no added fertilizer & compost">Neither</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Preferred Outcome:</div>
-                            <div class="col-4">
-                                <select id="outcome" class="form-select">
-                                    <option value="Flowers ">Flowers</option>
-                                    <option value="Fruit ">Fruit</option>
-                                    <option value="Herbs">Herbs </option>
-                                    <option value="Foliage ">Foliage </option>
-                                    <option value="Vegetables ">Vegetables </option>
-                                    <option value="Ornamental ">Ornamental </option>
-                                </select>
+                            <div class="row">
+                                <div class="col-5">Preferred Outcome:</div>
+                                <div class="col-4">
+                                    <select id="outcome" class="form-select">
+                                        <option value="[Outcome not specified by user]">-- Not specified --</option>
+                                        <option value="Flowers ">Flowers</option>
+                                        <option value="Fruit ">Fruit</option>
+                                        <option value="Herbs">Herbs </option>
+                                        <option value="Foliage ">Foliage </option>
+                                        <option value="Vegetables ">Vegetables </option>
+                                        <option value="Ornamental ">Ornamental </option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Gardening experience:</div>
-                            <div class="col-4">
-                                <select id="experience" class="form-select">
-                                    <option value="Beginner">Beginner</option>
-                                    <option value="Intermediate">Intermediate</option>
-                                    <option value="Advanced">Advanced</option>
-                                </select>
+                            <div class="row">
+                                <div class="col-5">Gardening experience:</div>
+                                <div class="col-4">
+                                    <select id="experience" class="form-select">
+                                        <option value="[Experience level not specified by user]">-- Not specified --</option>
+                                        <option value="Beginner">Beginner</option>
+                                        <option value="Intermediate">Intermediate</option>
+                                        <option value="Advanced">Advanced</option>
+                                    </select>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col-4">Additional Notes:</div>
-                            <div class="col-7">
-                                <textarea id="additionalNote" class="form-control" rows="4"
-                                    placeholder=" e.g. “I’m growing on a windy rooftop” "></textarea>
+                            <div class="row">
+                                <div class="col-5">Additional Notes:</div>
+                                <div class="col-7">
+                                    <textarea id="additionalNote" class="form-control" rows="4"
+                                        placeholder=" e.g. “I’m growing on a windy rooftop” "></textarea>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="col" style="text-align: right; margin-right: 60px;">
-                                <button id="gotoGuide" class="btn btn-success mt-2" type="submit">Get Growing
-                                    Guide</button>
+                            <div class="row">
+                                <div class="col" style="text-align: right; margin-right: 60px;">
+                                    <button id="gotoGuide" class="btn btn-success mt-2" type="submit">Get GrowingGuide</button>
+                                </div>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
-                </div>
-                <!-- Samples -->
-                <div class="col">
 
-                    <h1>bsvb</h1>
-                </div>
+                    <!-- Samples -->
+
+                    <div class="col" id="box2">
+
+                        <h1>bsvb</h1>
+                    </div>
+
             </div>
             <div class="row row-cols-1">
 
