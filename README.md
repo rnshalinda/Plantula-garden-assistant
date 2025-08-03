@@ -5,4 +5,5 @@
 
 🔗**Explore** 👇
 
-[![View](https://img.shields.io/badge/App%20Demo-%20Click%20Here-darkgreen?style=for-the-badge)](hhttps://rnshalinda.github.io/Plantula-ai-garden-assistant-webapp/)
+[![View](https://img.shields.io/badge/App%20Demo-%20Click%20Here-darkgreen?style=for-the-badge)](https://rnshalinda.github.io/Plantula-ai-garden-assistant-webapp/)
+
