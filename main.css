@@ -23,7 +23,8 @@ body::after {
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    pointer-events: none;   /* Allows mouse clicks to pass through */
+    pointer-events: none;
+    /* Allows mouse clicks to pass through */
 }
 
 body::before {
@@ -31,7 +32,8 @@ body::before {
     height: 300px;
     top: 10%;
     left: 5%;
-    background-color: rgba(8, 199, 72, 0.2);    /* Green glow */
+    background-color: rgba(8, 199, 72, 0.2);
+    /* Green glow */
 }
 
 body::after {
@@ -49,7 +51,7 @@ body::after {
 }
 
 
-.box{
+.box {
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
@@ -57,27 +59,32 @@ body::after {
 
 
 /* Q&A form row gap*/
-.box0{
-    width: 100%;
+.box0 {
+    width: 95;
     height: 80hv;
 
     display: grid;
     row-gap: 10px;
 
     /*width: 90%;  Responsive width */
-    max-width: 600px; 
+    max-width: 600px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 40px;
     /* padding-left: 50px; */
-     /* background: transparent; */
-    background-color: rgba(255, 255, 255, 0.05); /* form bg color */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Glassmorphism shadow */
-    backdrop-filter: blur(10px);                    /* Glassmorphism blur */
+    /* background: transparent; */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* form bg color */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    /* Glassmorphism shadow */
+    backdrop-filter: blur(10px);
+    /* Glassmorphism blur */
     /* align-items: center; */
-    position: relative;             /* Establish a stacking context */
-    z-index: 1;                     /* Ensure it's above the background pseudo-elements */
+    position: relative;
+    /* Establish a stacking context */
+    z-index: 1;
+    /* Ensure it's above the background pseudo-elements */
 }
 
 /* #form-container {
@@ -91,7 +98,7 @@ body::after {
 } */
 
 
-#btn-gotoGuide{
+#btn-gotoGuide {
     background-image: linear-gradient(270deg, #289a17, #7eb909, #289a17);
     background-size: 400% 100%;
     background-position: 0% 50%;
@@ -106,10 +113,10 @@ body::after {
     margin-top: 15px;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    
+
 }
 
-#btn-gotoGuide:hover{
+#btn-gotoGuide:hover {
     transition: transform 0.2s ease, box-shadow 0.3 ease;
     /* swapped colors */
     /* background-image: linear-gradient(to right, #6eb909, #289a17);  */
@@ -122,43 +129,116 @@ body::after {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
 }
 
-.txt-field{
+.txt-field {
     /* flex: 1; */
-    padding: 8px 14px; /* up -- left */
+    padding: 8px 14px;
+    /* up -- left */
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.335);
     background-color: rgba(255, 255, 255, 0.247);
     color: rgb(255, 255, 255);
     outline: none;
 }
-.txt-field:hover{
+
+.txt-field:hover {
     background-color: rgba(255, 255, 255, 0.479);
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
-.txt-field:focus{
+
+.txt-field:focus {
     background-color: rgba(255, 255, 255, 0.247);
     border: 1px solid rgba(255, 255, 255, 0.335);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.581);  /* out line glow*/
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.581);
+    /* out line glow*/
 }
 
 
 
-
-.box1{
+/* Swiper styles for .box1 only */
+.box1 {
     width: 100%;
     height: 55vh;
 }
 
+.box1 swiper-container {
+    width: 100%;
+    height: 100%;
+    --swiper-navigation-color: rgba(225, 221, 221, 0.537);
+    /* swiper button color */
+}
 
-.box2{
+.box1 swiper-slide {
+    text-align: center;
+    /* font-size: 18px; */
+    background: transparent;
+    /* color: white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 swiper-slide img {
+    display: block;
+    width: 60%;
+    /* height: 100%; */
+    object-fit: cover;
+}
+
+
+/* Swiper styles for .box2 only */
+.box2 {
     width: 100%;
     height: 23vh;
+    border-radius: 15px;
 }
+
+.box2 swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
+.box2 swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+
+    cursor: pointer;
+    border-radius: 15px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.box2 swiper-slide img:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.box2 swiper-slide img:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+}
+
+/* .thumb-swiper swiper-slide.swiper-slide-thumb-active {
+    border: 2px solid white;
+    opacity: 1;
+} */

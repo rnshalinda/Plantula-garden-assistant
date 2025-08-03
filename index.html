@@ -6,11 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- bootstrap CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
+
+    <!-- Flowbite tailwind CDN -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" /> -->
+
+    <!-- swiper js CDN -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- External CSS -->
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -24,7 +36,7 @@
                     <!-- Logo & Title -->
                     <a href="/" class="d-flex align-items-center text-decoration-none me-4">
                         <img class="me-2" width="50" aria-hidden="true"
-                            src="assets/images/leaves-forest-foliage-nature-sprout-svgrepo-com.svg" alt="Plantula Logo">
+                            src="assets/images/logo/leaves-forest-foliage-nature-sprout-svgrepo-com.svg" alt="Plantula Logo">
                         <h2 class="mb-0" style="color: aliceblue;">Plantula</h2>
                     </a>
                 </div>
@@ -43,14 +55,16 @@
                         <div class="row">
                             <div class="col-5">Plant name:</div>
                             <div class="col-5">
-                                <input id="plantName" class="form-control txt-field" type="text" placeholder="e.g. Tomato" />
+                                <input id="plantName" class="form-control txt-field" type="text"
+                                    placeholder="e.g. Tomato" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-5">Environment:</div>
                             <div class="col-6">
-                                <input id="location" class="form-control txt-field" type="text" placeholder="e.g. Indoor, Balcony, Garden, Greenhouse" />
+                                <input id="location" class="form-control txt-field" type="text"
+                                    placeholder="e.g. Indoor, Balcony, Garden, Greenhouse" />
                             </div>
                         </div>
 
@@ -62,11 +76,15 @@
                                     <option value="Tropical">Tropical: Hot, humid, year-round rain</option>
                                     <option value="Subtropical">Subtropical: Warm, humid summers, mild winters</option>
                                     <option value="Temperate">Temperate: Four seasons, moderate rainfall</option>
-                                    <option value="Mediterranean">Mediterranean: Hot, dry summers; cool, wet winters</option>
+                                    <option value="Mediterranean">Mediterranean: Hot, dry summers; cool, wet winters
+                                    </option>
                                     <option value="Arid">Desert: Very dry, hot days, cool nights</option>
-                                    <option value="Semi-arid">Semi-arid: Low rainfall but not extreme like deserts</option>
-                                    <option value="Continental">Continental: Large temperature variations, cold winters</option>
-                                    <option value="Mountain">Mountain: Cool to cold year-round, short growing seasons</option>
+                                    <option value="Semi-arid">Semi-arid: Low rainfall but not extreme like deserts
+                                    </option>
+                                    <option value="Continental">Continental: Large temperature variations, cold winters
+                                    </option>
+                                    <option value="Mountain">Mountain: Cool to cold year-round, short growing seasons
+                                    </option>
                                     <option value="Tundra">Polar: Extremely cold, minimal growing potential</option>
                                 </select>
                             </div>
@@ -75,35 +93,40 @@
                         <div class="row">
                             <div class="col-5">Average Temperature (°C):</div>
                             <div class="col-2">
-                                <input id="temp" class="form-control txt-field" type="number" placeholder="°C" min="-50" max="100" />
+                                <input id="temp" class="form-control txt-field" type="number" placeholder="°C" min="-50"
+                                    max="100" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-5">Sunlight Hours:</div>
                             <div class="col-2">
-                                <input id="sunlightHours" class="form-control txt-field" type="number" placeholder="h" min="0" max="24" />
+                                <input id="sunlightHours" class="form-control txt-field" type="number" placeholder="h"
+                                    min="0" max="24" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-5">Water Availability:</div>
                             <div class="col-6">
-                                <input id="water" class="form-control txt-field" type="text" placeholder="e.g. Daily, Twice a week, Rarely" />
+                                <input id="water" class="form-control txt-field" type="text"
+                                    placeholder="e.g. Daily, Twice a week, Rarely" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-5">Soil Type:</div>
                             <div class="col-7">
-                                <input id="soil" class="form-control txt-field" type="text" placeholder="e.g. Garden soil, Clay, Sandy, Not sure" />
+                                <input id="soil" class="form-control txt-field" type="text"
+                                    placeholder="e.g. Garden soil, Clay, Sandy, Not sure" />
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-5">Container Type:</div>
                             <div class="col-7">
-                                <input id="container" class="form-control txt-field" type="text" placeholder="e.g. Pot, Ground, Raised bed" />
+                                <input id="container" class="form-control txt-field" type="text"
+                                    placeholder="e.g. Pot, Ground, Raised bed" />
                             </div>
                         </div>
 
@@ -111,7 +134,8 @@
                             <div class="col-5">Nutrients:</div>
                             <div class="col-4">
                                 <select id="nutrients" class="form-control txt-field">
-                                    <option value="nutrients but didn't specified what type">-- Not specified --</option>
+                                    <option value="nutrients but didn't specified what type">-- Not specified --
+                                    </option>
                                     <option value="only fertilizer">Only Fertilizer</option>
                                     <option value="only compost">Only Compost</option>
                                     <option value="fertilizer & compost">Both</option>
@@ -139,7 +163,8 @@
                             <div class="col-5">Gardening experience:</div>
                             <div class="col-4">
                                 <select id="experience" class="form-control txt-field">
-                                    <option value="[Experience level not specified by user]">-- Not specified --</option>
+                                    <option value="[Experience level not specified by user]">-- Not specified --
+                                    </option>
                                     <option value="Beginner">Beginner</option>
                                     <option value="Intermediate">Intermediate</option>
                                     <option value="Advanced">Advanced</option>
@@ -150,7 +175,8 @@
                         <div class="row">
                             <div class="col-5">Additional Notes:</div>
                             <div class="col-7">
-                                <textarea id="additional-note" class="form-control txt-field" rows="4" placeholder=" e.g. “I’m growing on a windy rooftop” "></textarea>
+                                <textarea id="additional-note" class="form-control txt-field" rows="4"
+                                    placeholder=" e.g. “I’m growing on a windy rooftop” "></textarea>
                             </div>
                         </div>
 
@@ -166,10 +192,30 @@
                 <!-- Samples -->
                 <div class="col">
 
-                    <div class="box box1" style="background-color: aquamarine;">
-                        
+                    <div class="box box1">
+
+                        <swiper-container class="main-swiper" loop="true" navigation="true" mousewheel="true">
+                            <swiper-slide><img src="/assets/images/plants/1.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/2.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/flowers-34592_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/monstera-7578722_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/plant-7413415_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/flowers-34592_1280.png" alt=""></swiper-slide>
+                        </swiper-container>
+
                     </div>
-                    <div class="box box2" style="background-color: blue;">
+
+                    <div class="box box2">
+
+                        <swiper-container class="thumb-swiper" pagination="false" pagination-clickable="false" clickable="true" slides-per-view="4"
+                            centered-slides="true" space-between="30" grab-cursor="true" rewind="true" mousewheel="true">
+                            <swiper-slide><img src="/assets/images/plants/1.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/2.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/flowers-34592_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/monstera-7578722_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/plant-7413415_1280.png" alt=""></swiper-slide>
+                            <swiper-slide><img src="/assets/images/plants/flowers-34592_1280.png" alt=""></swiper-slide>
+                        </swiper-container>
 
                     </div>
 
@@ -181,13 +227,22 @@
 
     </div>
 
-    <!-- <script type="module" src="main.js"></script> -->
+    <!-- Flowbite tailwind CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script> -->
+
+    <!-- swiper js CDN -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+    <!-- External js -->
     <script src="main.js"></script>
+
     <!-- AOS - animate -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+
 </body>
 
 </html>
