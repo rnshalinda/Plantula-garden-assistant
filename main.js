@@ -98,18 +98,35 @@ document.getElementById('btn-gotoGuide').addEventListener('click', () => {
 
 
 // Jump to specific slider functionality by linking both box1 & box2 swiper
-window.addEventListener('DOMContentLoaded', () => {
-        customElements.whenDefined('swiper-container').then(() => {
-                let mainSwiper = document.querySelector('.main-swiper').swiper;
-                let thumbSwiper = document.querySelector('.thumb-swiper').swiper;
+// window.addEventListener('DOMContentLoaded', () => {                                     // This ensures your code runs only after the full HTML DOM has been loaded (not images, etc.)
+//         customElements.whenDefined('swiper-container').then(() => {                     // Waits for the Swiper Web Component (<swiper-container> js) to be fully initialized by the browser.
+//                 let box1_swiper = document.querySelector('.box1_swiper').swiper;        // with querrySelector, can access anything unlike getElimentbyId
+//                 let box2_swiper = document.querySelector('.box2_swiper').swiper;
 
-                Promise.all([mainSwiper.ready, thumbSwiper.ready]).then(() => {
-                        thumbSwiper.on('click', () => {
-                                const clickedIndex = thumbSwiper.clickedIndex;
-                                if (clickedIndex !== undefined) {
-                                        mainSwiper.slideToLoop(clickedIndex);
-                                }
-                        });
-                });
+//                 Promise.all([box1_swiper.ready, box2_swiper.ready]).then(() => {        // Even after .swiper is available, Swiper still does async setup (e.g., DOM calculations, CDN swiper-js).  Waits until both Swipers are fully ready.
+//                         box2_swiper.on('click', () => {                                 // event listener for click events on the box2_swiper.
+//                                 let clickedIndex = box2_swiper.clickedIndex;            // clickedIndex gives you the index of the clicked slide in the thumbnail Swiper, return undefined if no slide
+//                                 if (clickedIndex !== undefined) {                       // ensures outside clicks within the swiper won't count. otherwise swiper jumps to the first index if clicked outside (return undefined)
+//                                         box1_swiper.slideToLoop(clickedIndex);          // -: slideToLoop(index) → move slide to the correct slide even if looping is enabled.
+//                                 }
+//                         });
+//                 });
+//         });
+// });
+
+
+window.addEventListener('DOMContentLoaded', () => {
+        let box1_swiper = document.querySelector('.box1_swiper').swiper;
+        let box2_swiper = document.querySelector('.box2_swiper').swiper;     
+
+        Promise.all([box1_swiper.ready, box2_swiper.ready]).then(() => {
+                box2_swiper.on('click',() => {
+                        index = box2_swiper.clickedIndex;
+                        if (index !== undefined) {      
+                                box1_swiper.slideToLoop(index);
+                        }
+                });   
         });
 });
+
+
