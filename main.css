@@ -55,6 +55,7 @@ body::after {
     display: flex;
     /* flex-wrap: wrap; */
     flex-direction: column;
+    /* row-gap: 100px; */
 }
 
 
@@ -140,9 +141,8 @@ body::after {
 }
 
 .txt-field {
-    /* flex: 1; */
-    padding: 8px 14px;
-    /* up -- left */
+    padding: 8px 14px;  /* up -- left */
+    
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.335);
     background-color: rgba(255, 255, 255, 0.247);
@@ -189,8 +189,8 @@ body::after {
 
 .box1 swiper-slide img {
     display: block;
-    width: 60%;
-    /* height: 100%; */
+    /* width: 70%;
+    height: 70%; */
     object-fit: cover;
 }
 
@@ -198,8 +198,10 @@ body::after {
 /* Swiper styles for .box2 only */
 .box2 {
     width: 100%;
-    height: 23vh;
-    border-radius: 15px;
+    height: 300px; 
+    /* To vertically center an element, the parent container must have a known, non-zero height. 
+    vertical centering (using align-items: center) works relative to the height of the parent. */
+    margin-top: 20px;
 }
 
 .box2 swiper-container {
@@ -208,37 +210,48 @@ body::after {
 }
 
 .box2 swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: transparent;
+    background: transparent;  
+    align-content: center;  /* vertical center */
+    
+}
+
+.slide{
+    padding: 3px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 90%;
+    height: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.box2 swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 90%;
-    object-fit: cover;
-
+    flex-direction: column;
+    align-items: center; 
+    
+    row-gap: 7px;   /* gap baween <img> and <p> */  
+    font-size: 20px;
+    font-weight: 700px;
     cursor: pointer;
+
     border-radius: 15px;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.box2 swiper-slide img:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
-    transform: scale(1.05);
-}
-
-.box2 swiper-slide img:hover{
-    transform: scale(1.05);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    
+    transition: transform 0.2s ease, background-color 0.3s ease;
 }
 
-/* .thumb-swiper swiper-slide.swiper-slide-thumb-active {
-    border: 2px solid white;
-    opacity: 1;
-} */
+.box2 swiper-slide img{
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    padding: 0;
+
+    transition: transform 0.2s ease;
+}
+
+.slide:hover 
+img{
+    transform: scale(1.20);
+}
+
+.slide:hover {
+    transform: scale(1.05);
+    /* background-color: 0 0 0 3px rgba(255, 255, 255, 0.5); */
+    background-color: rgba(217, 212, 212, 0.083);
+}
