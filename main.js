@@ -219,3 +219,20 @@ function defaultPromts(name){
 
         sendPromts();
 }
+
+
+// Animated cursor gif section
+const images = document.querySelectorAll('.box1_swiper swiper-slide img');
+const anim = document.getElementById('hoverAnim');
+
+images.forEach((img) => {
+        img.addEventListener('mousemove', (e) => {
+                anim.style.display = 'block';
+                anim.style.left = `${e.pageX - 65}px`; // center alignment by half the size of gif ( w h / 2 )
+                anim.style.top = `${e.pageY - 65}px`;
+        });
+
+        img.addEventListener('mouseleave', () => {
+                anim.style.display = 'none';
+        });
+});
