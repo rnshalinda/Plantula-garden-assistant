@@ -7,44 +7,37 @@ body {
     padding: 0;
 
     font-family: 'Segoe UI', sans-serif;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 700px;
     color: white;
 
     position: relative;
-    background: linear-gradient(to bottom, #1f5945, #24724b, #419b76);
+    background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76);
+    /* background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76, #3a8d6b); */
 
-    height: 100vh;
-    /* min-height: 98vh; */
     /* fit to full page */
-
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* vertical centering */
-    align-items: center;
-    /* horizontal centering */
-    overflow: hidden;
+    flex-direction: column; /* Stack top to bottom */
+    justify-content: flex-start; /* Keep top items at top */
+    /* overflow: hidden; */
 }
 
 body::before,
 body::after {
     content: '';
     position: absolute;
-    border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    pointer-events: none;
-    /* Allows mouse clicks to pass through */
+    pointer-events: none;   /* Allows mouse clicks to pass through */
 }
 
 body::before {
     width: 500px;
-    height: 300px;
+    height: 400px;
     top: 10%;
     left: 5%;
-    background-color: rgba(8, 199, 72, 0.2);
-    /* Green glow */
+    background-color: rgba(8, 199, 72, 0.2);    /* Green glow */
 }
 
 body::after {
@@ -57,11 +50,6 @@ body::after {
 
 
 /* Main table container */
-.container-table {
-    padding-top: 70px;
-}
-
-
 .box {
     display: flex;
     /* flex-wrap: wrap; */
@@ -72,42 +60,28 @@ body::after {
 
 /* Q&A form row gap*/
 .box0 {
-    width: 95;
-    height: 80hv;
+    margin-top: 5%;
+    margin-left: 20%;
+    width: 72%;
+    height: 95%;
 
     display: grid;
-    row-gap: 10px;
+    row-gap: 6px;
 
-    /*width: 90%;  Responsive width */
-    max-width: 600px;
+    /* max-width: 600px; */
     border: 1px solid rgba(255, 255, 255, 0.18);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 40px;
-    /* padding-left: 50px; */
-    /* background: transparent; */
-    background-color: rgba(255, 255, 255, 0.05);
-    /* form bg color */
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    /* Glassmorphism shadow */
-    backdrop-filter: blur(10px);
-    /* Glassmorphism blur */
+
+    background-color: rgba(255, 255, 255, 0.05);    /* form bg color */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);   /* Glassmorphism shadow */
+    backdrop-filter: blur(10px);    /* Glassmorphism blur */
     /* align-items: center; */
     position: relative;
-    /* Establish a stacking context */
-    z-index: 1;
-    /* Ensure it's above the background pseudo-elements */
+
+    z-index: 1; /* Ensure above the background */
 }
-
-/* #form-container {
-    display: flex !important;
-    flex-direction: row !important;
-    height: 40px !important;
-} */
-
-/* #additional-note {
-    height: 80px !important;
-} */
 
 
 #btn-gotoGuide {
@@ -118,19 +92,18 @@ body::after {
     /* border: rgba(19, 221, 106, 0.107) 1px solid; */
     border: none;
     border-radius: 10px;
-    font-size: 1.1em;
+    font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     padding: 8px 18px;
-    margin-top: 15px;
+    margin-top: 12px;
 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-
 }
 
+/* swapped colors */
 #btn-gotoGuide:hover {
-    transition: transform 0.2s ease, box-shadow 0.3 ease;
-    /* swapped colors */
+    transition: transform 0.2s ease, box-shadow 0.3 ease;   
     /* background-image: linear-gradient(to right, #6eb909, #289a17);  */
     transform: scale(1.01);
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
@@ -152,10 +125,10 @@ body::after {
 }
 
 .txt-field {
-    padding: 8px 14px;
-    /* up -- left */
+    padding: 6px 12px;  /* top-bottom, left-right */
+    font-size: 12px;
 
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid rgba(255, 255, 255, 0.335);
     background-color: rgba(255, 255, 255, 0.247);
     color: rgb(255, 255, 255);
@@ -171,22 +144,21 @@ body::after {
     background-color: rgba(255, 255, 255, 0.247);
     border: 1px solid rgba(255, 255, 255, 0.335);
     box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.581);
-    /* out line glow*/
 }
 
 
 
 /* Swiper styles for .box1 only */
 .box1 {
-    width: 100%;
+    margin-top: 5%;
+    width: 70%;
     height: 55vh;
 }
 
 .box1 swiper-container {
     width: 100%;
     height: 100%;
-    --swiper-navigation-color: rgba(225, 221, 221, 0.537);
-    /* swiper button color */
+    --swiper-navigation-color: rgba(225, 221, 221, 0.537);  /* swiper button color */
 }
 
 .box1 swiper-slide {
@@ -201,21 +173,17 @@ body::after {
 
 .box1 swiper-slide img {
     display: block;
-    /* width: 70%;
-    height: 70%; */
     object-fit: cover;
     cursor: pointer;
-    content: 'link';
 }
 
 
 /* Swiper styles for .box2 only */
 .box2 {
-    width: 100%;
-    height: 300px;
+    width: 75%;
     /* To vertically center an element, the parent container must have a known, non-zero height. 
     vertical centering (using align-items: center) works relative to the height of the parent. */
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 
 .box2 swiper-container {
@@ -230,18 +198,17 @@ body::after {
 }
 
 .slide {
-    padding: 3px;
-    margin-top: 30px;
-    margin-bottom: 40px;
-    width: 90%;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    row-gap: 7px;
-    /* gap baween <img> and <p> */
-    font-size: 20px;
+    row-gap: 7px;   /* gap baween <img> and <p> */
+    font-size: 14px;
     font-weight: 700px;
     cursor: pointer;
 
