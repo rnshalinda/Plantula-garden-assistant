@@ -1,66 +1,68 @@
-.bg-Transparency {
-    background-color: transparent !important;
-}
 
 body {
     font-family: 'Segoe UI', sans-serif;
     font-size: 13px;
-    font-weight: 700px;
+    font-weight: 600;
     color: white;
 
-    position: relative;
-    background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76);
-    /* background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76, #3a8d6b); */
+    background-image: linear-gradient(to bottom, #1f5945dd, #24724be8, #419b76d4); 
 
     /* fit to full page */
+    position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column; /* Stack top to bottom */
     justify-content: flex-start; /* Keep top items at top */
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
-body::before,
+/* Blurred wallpaper background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* bg image + gradient */
+    background: linear-gradient(to bottom, #1f5945a4, #24724b82, #419b7688),
+                url('assets/images/bg/index-bg.webp') center/cover no-repeat;
+
+    filter: blur(8px); /* Gaussian-like blur */
+    z-index: -2; 
+}
+
+/* overlay bg behing swiper bars  */
 body::after {
+    width: 350px;
+    height: 500px;
+    bottom: 10%;
+    right: 26%;
+    background-color: rgba(19, 96, 53, 0.273);
+
     content: '';
     position: absolute;
-    filter: blur(100px);
+    filter: blur(90px);
     z-index: -1;
-    pointer-events: none;   /* Allows mouse clicks to pass through */
-}
+} 
 
-body::before {
-    width: 500px;
-    height: 400px;
-    top: 10%;
-    left: 5%;
-    background-color: rgba(8, 199, 72, 0.2);    /* Green glow */
-}
-
-body::after {
-    width: 400px;
-    height: 400px;
-    bottom: 5%;
-    right: 5%;
-    background-color: rgba(43, 180, 168, 0.15);
-}
 
 .navbar{
-    /* padding-left: 125px;
-    background-image: linear-gradient(270deg, #1f5945, #289a17d5, #1f5945);
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding-bottom: 10px; */
+    width: 100%;
+    padding-left: 250px;
+    padding-bottom: 5px;
 
-    padding-left: 125px;
-    padding-bottom: 10px;
-
-    background-image: linear-gradient(270deg, #1f5945e0, #28a73be0, #1f5945e0);
+    background-image: linear-gradient(270deg, #1f5945c3, #28a73b85, #1f5945c8);
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(12px);
 
     border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* thin glass edge */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* soft glow shadow */
+
+    display: flex;          /* stretch content row */
+    align-items: center;    /* center vertically */
+    justify-content: flex-start; /* align items to left */
 }
 
 /* Main table container */
@@ -207,8 +209,7 @@ body::after {
 
 .box2 swiper-slide {
     background: transparent;
-    align-content: center;
-    /* vertical center */
+    align-content: center;  /* vertical center */
 }
 
 .slide {
