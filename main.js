@@ -1,6 +1,11 @@
 // Get Growing Guide button action
 let promts = {}
 
+// used for image serach API call, plant overview section in guid page
+let plantName;
+let outcome;
+
+
 let formatString = `
         You are writing a section to be embedded inside a webpage.
         Only return clean HTML content with basic tags like <h1>, <h2>, <p>, <ul>, <li>, <strong>, and <em>, accoording to the given instruction above if there are.
@@ -11,8 +16,8 @@ let formatString = `
 
 // collect promt data from form
 document.getElementById('btn-gotoGuide').addEventListener('click', () => {
-
-        let plantName = document.getElementById("plantName").value;
+        // by putting these here, update new data every btn click
+        plantName = document.getElementById("plantName").value;
         let environment = document.getElementById("environment").value;
         let climate = document.getElementById("climate").value;
         let temp = document.getElementById("temp").value;
@@ -21,7 +26,7 @@ document.getElementById('btn-gotoGuide').addEventListener('click', () => {
         let soil = document.getElementById("soil").value;
         let container = document.getElementById("container").value;
         let nutrients = document.getElementById("nutrients").value;
-        let outcome = document.getElementById("outcome").value;
+        outcome = document.getElementById("outcome").value;
         let experience = document.getElementById("experience").value;
         let additionalNote = document.getElementById("additional-note").value;
 
@@ -87,14 +92,17 @@ document.getElementById('btn-gotoGuide').addEventListener('click', () => {
                         promts[key] += `\n\nThe user added this note: "${additionalNote}". Please take this into consideration.`;
                 };
         }
-        sendPromts();
+        savePromts();
 });
 
 
 // open link page (src/guide.html) and store promt data in sessionStorage
-function sendPromts(){
-        sessionStorage.setItem('sharedData', JSON.stringify(promts));   // store data in sessionStorage 
-        //console.log(promts.overviewPrompt);
+function savePromts(){
+        sessionStorage.setItem('sharedData', JSON.stringify(promts));   // store promt data in sessionStorage 
+
+        sessionStorage.setItem('plantName', plantName);     // Store plant name separately
+
+        sessionStorage.setItem('plantType', outcome); 
 
         window.location.href = 'src/guide.html';    // launch page
 }
@@ -153,6 +161,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function defaultPromts(name){
+        plantName = name;
         environment =  "Outdoor gardens";
         climate = "Warm, temperate climate";
         temp = "18–27";
@@ -217,8 +226,11 @@ function defaultPromts(name){
                 `,
         }
 
-        sendPromts();
+        savePromts();
 }
+
+
+
 
 
 // Animated cursor gif section

@@ -3,21 +3,43 @@ html {
 }
 
 body {
+    width: 100%;
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    /* background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76); */
 
-    background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76);
+    background-color: #4b8500;
+
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
+/* body::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/assets/images/bg/guidePage-bg.jpg');
+    filter: blur(80px); 
+    z-index: -2; 
+}
 
-body::before,
+ */
+
+
+
+
+
+/* body::before,
 body::after {
     content: '';
     position: absolute;
     filter: blur(100px);
     z-index: -1;
-    pointer-events: none;   /* Allows mouse clicks to pass through */
+    pointer-events: none;   
 }
 
 body::before {
@@ -25,7 +47,7 @@ body::before {
     height: 400px;
     top: 10%;
     left: 5%;
-    background-color: rgba(8, 199, 72, 0.2);    /* Green glow */
+    background-color: rgba(8, 199, 72, 0.2);   
 }
 
 body::after {
@@ -34,16 +56,10 @@ body::after {
     bottom: 5%;
     right: 5%;
     background-color: rgba(43, 180, 168, 0.15);
-}
+} */
 
 
 .navbar{
-    /* padding-left: 250px;
-    background-image: linear-gradient(270deg, #1f5945, #289a17d5, #1f5945);
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    padding-bottom: 10px; */
-
     padding-left: 250px;
     padding-bottom: 5px;
 
@@ -90,7 +106,12 @@ section {
 
 
 
-
+.plantImage{
+    display: flex;
+    justify-content: center;  /* horizontal centering */
+    align-items: center;      /* vertical centering */
+    min-height: 400px;        
+}
 
 
 
