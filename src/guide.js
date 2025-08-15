@@ -4,11 +4,11 @@ let storedPromt = sessionStorage.getItem('sharedData');
 let promts = storedPromt ? JSON.parse(storedPromt) : null;
 
 // Gemini API
-// const API_KEY = "AIzaSyDX22c_1zhgspxYlK2GewqZ-cMPyLbrXlg";
+// const AI_KEY = "AIzaSyDX22c_1zhgspxYlK2GewqZ-cMPyLbrXlg";
 
 // async function callAPI(promptText) {
 //     const res = await fetch(
-//         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
+//         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AI_KEY}`,
 //         {
 //             method: "POST",
 //             headers: {
@@ -29,14 +29,14 @@ let promts = storedPromt ? JSON.parse(storedPromt) : null;
 
 
 // OpenRouter API
-const API_KEY = "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";
+const AI_KEY = "__AI_API_KEY__";
 
 async function callAPI(promptText) {
     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${API_KEY}`,
+            "Authorization": `Bearer ${AI_KEY}`,
         },
         body: JSON.stringify({
             model: "google/gemma-3n-e4b-it:free", // or "mistralai/mistral-7b-instruct"
@@ -95,28 +95,29 @@ async function renderSections(promts) {
 
 // activate promt call to LLM
 if (promts) {
-    //renderSections(promts);
+    renderSections(promts);
 }
 
 
+// getting plant name and outcome ftom sessionStorage to send to perform pixabay all call
 document.addEventListener('DOMContentLoaded', () => {
-    // if(sessionStorage.getItem('plantType') == "Healthy, fast-growing plants with good yield"){
-    //     getPlantImage(sessionStorage.getItem('plantName'), "plant");
-    // }
-    // else{
-    //     getPlantImage(sessionStorage.getItem('plantName'),sessionStorage.getItem('plantType'));
-    // }
-    document.querySelector('.plantImage').innerHTML = `<img src="https://t1.pixers.pics/img-1fb6f67c/wall-murals-set-fruits-and-vegies.jpg?H4sIAAAAAAAAA3WOW2oDMQxFt2PDZORn7JkF5DdLCMaPdJp5GNttQlZfmdLPIsSVBFfnwtdeXYrg495igW0JYY2QlhW3OpdYl3ckbDBM0RmvK2GM0fn4jsWXI5OTtUNvM4nedH46NG6uPMhHa7nOAFWOeXnhNxRfwW8VBOMG2Bn0pJVTIlkfJnNrLsfmTo-nC8W1Me_3gfWifzEUY4Pq-FaWjWCeA0mNfOY7hX9ovzOgCy5X0BKsAMNhMv10u1y1tMJwhHuppODBRKHFWaJaw5OQMnlpgpvSiJQfRctl9ywBAAA=" style="border-radius: 15px; width:360px; height:280px;" alt="">`;
+    if(sessionStorage.getItem('plantType') == "Healthy, fast-growing plants with good yield"){
+        getPlantImage(sessionStorage.getItem('plantName'), "plant");
+    }
+    else{
+        getPlantImage(sessionStorage.getItem('plantName'),sessionStorage.getItem('plantType'));
+    }
+    // document.querySelector('.plantImage').innerHTML = `<img src="https://t1.pixers.pics/img-1fb6f67c/wall-murals-set-fruits-and-vegies.jpg?H4sIAAAAAAAAA3WOW2oDMQxFt2PDZORn7JkF5DdLCMaPdJp5GNttQlZfmdLPIsSVBFfnwtdeXYrg495igW0JYY2QlhW3OpdYl3ckbDBM0RmvK2GM0fn4jsWXI5OTtUNvM4nedH46NG6uPMhHa7nOAFWOeXnhNxRfwW8VBOMG2Bn0pJVTIlkfJnNrLsfmTo-nC8W1Me_3gfWifzEUY4Pq-FaWjWCeA0mNfOY7hX9ovzOgCy5X0BKsAMNhMv10u1y1tMJwhHuppODBRKHFWaJaw5OQMnlpgpvSiJQfRctl9ywBAAA=" style="border-radius: 15px; width:360px; height:280px;" alt="">`;
 });
 
 
 // pixabay API - plant images
-const pixabayAPI = "";
+const PIXABAY_KEY = "__PIXABAY_API_KEY__";
 
 function getPlantImage(plantName, type){
     console.log(type);
     
-    fetch(`https://pixabay.com/api/?key=${pixabayAPI}&q=${plantName}+${type}&image_type=photo&pretty=true`).
+    fetch(`https://pixabay.com/api/?key=${PIXABAY_KEY}&q=${plantName}+${type}&image_type=photo&pretty=true`).
     then(res => res.json()).
     then(data => {
         // console.log(data);
@@ -132,6 +133,8 @@ function getPlantImage(plantName, type){
 
 
 // section scroll background change
+
+
 // let backgrounds = [
 //     "url('/assets/images/bg/overview-bg1.jpg')",
 //     "url('/assets/images/bg/overview-bg2.jpg')",
