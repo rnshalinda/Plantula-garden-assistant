@@ -3,30 +3,6 @@
 let storedPromt = sessionStorage.getItem('sharedData');
 let promts = storedPromt ? JSON.parse(storedPromt) : null;
 
-// Gemini API
-// const AI_KEY = "AIzaSyDX22c_1zhgspxYlK2GewqZ-cMPyLbrXlg";
-
-// async function callAPI(promptText) {
-//     const res = await fetch(
-//         `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AI_KEY}`,
-//         {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//             },
-//             body: JSON.stringify({
-//                 contents: [{ parts: [{ text: promptText }] }],
-//             }),
-//         }
-//     );
-
-//     const data = await res.json();
-//     //console.log(data.candidates?.[0]?.content?.parts?.[0]?.text || "No response");
-//     return cleanAIResponse(data.candidates?.[0]?.content?.parts?.[0]?.text || "No response");
-// }
-
-
-
 
 // OpenRouter API
 const AI_KEY = "__AI_API_KEY__";
