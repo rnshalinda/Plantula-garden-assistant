@@ -88,7 +88,7 @@ async function renderSections(promts) {
         
         document.getElementById(`${key}`).innerHTML = await callAPI(promts[key]);
 
-        await sleep(1000);
+        await sleep(2000);
     }
 }
 

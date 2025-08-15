@@ -57,7 +57,7 @@ section {
     align-items: center;      /* vertical centering */
 
     color: white;
-    overflow: hidden;         /* for blur edge hiding */
+    overflow: hidden;         
 
     margin-bottom: 15px;      /* gap between each section */
 }

@@ -13,7 +13,11 @@
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
         crossorigin="anonymous"></script>
 
+    <!-- My CSS -->
     <link rel="stylesheet" href="guide-style.css">
+
+    <!-- AOS css CDN -->
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> -->
 </head>
 <!-- style="background-color: black; color: aliceblue;" -->
 
@@ -39,7 +43,7 @@
                     <div class="col-6" id="overviewPrompt">
 
                     </div>
-                    <div class="col-6 plantImage">
+                    <div class="col-6 plantImage" data-aos="zoom-in-left">
 
                     </div>
                 </div>
@@ -47,8 +51,8 @@
 
             <section class="section2">
                 <div class="container row inner-container">
-                    <div class="col-6">
-                        <img width="400px" style="border-radius: 10px;" src="../assets/images/illustrations/condition.webp" alt="">
+                    <div class="col-6" data-aos="fade-right">
+                        <img width="420px" style="border-radius: 10px;" src="../assets/images/illustrations/condition.webp" alt="">
                     </div>
                     <div class="col-6" id="conditionsPrompt">
 
@@ -61,7 +65,7 @@
                     <div class="col-6" id="wateringPrompt">
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-left">
                         <img width="350px" style="border-radius: 10px;" src="../assets/images/illustrations/water.webp" alt="">
                     </div>
                 </div>
@@ -69,8 +73,8 @@
 
             <section class="section4">
                 <div class="container row inner-container">
-                    <div class="col-6">
-                        <img width="400px" style="border-radius: 10px;" src="../assets/images/illustrations/soil.webp" alt="">
+                    <div class="col-6" data-aos="fade-right">
+                        <img width="420px" style="border-radius: 10px;" src="../assets/images/illustrations/soil.webp" alt="">
                     </div>
                     <div class="col-6" id="soilPrompt">
                         
@@ -83,7 +87,7 @@
                     <div class="col-6" id="outcomePrompt">
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-left">
                         <img width="350px" style="border-radius: 10px;" src="../assets/images/illustrations/outcome.svg" alt="">
                     </div>
                 </div>
@@ -91,7 +95,7 @@
 
             <section class="section6">
                 <div class="container row inner-container">
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-right">
                         <img width="400px" style="border-radius: 10px;" src="../assets/images/illustrations/issues.webp" alt="">
                     </div>
                     <div class="col-6" id="issuesPrompt">
@@ -105,7 +109,7 @@
                     <div class="col-6" id="tipsPrompt">
 
                     </div>
-                    <div class="col-6">
+                    <div class="col-6" data-aos="fade-left">
                         <img width="350px" style="border-radius: 10px;" src="../assets/images/illustrations/tips.webp" alt="">
                     </div>
                 </div>
@@ -113,7 +117,21 @@
         </div>
     </div>
 
+    <!-- AOS js CDN -->
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+
+    <!-- My js  -->
     <script type="module" src="guide.js"></script>
+
+    <!-- <script>
+        window.addEventListener('load', () => {
+            AOS.init({
+                scrollContainer: '.scroll-container',
+            });
+            AOS.refresh();
+        });
+    </script> -->
+
 </body>
 
 </html>
