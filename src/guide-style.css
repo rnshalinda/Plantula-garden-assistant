@@ -3,60 +3,32 @@ html {
 }
 
 body {
+    /* This variable will store the image URL */
+    --bg-image: url('/assets/images/bg/overview-bg1.jpg');
     width: 100%;
-    height: 100vh;
     margin: 0;
+    height: 100vh;
+    background-color: #10130c;
     overflow: hidden;
-    /* background-image: linear-gradient(to bottom, #1f5945, #24724b, #419b76); */
-
-    background-color: #4b8500;
-
-    background-image: url("https://www.transparenttextures.com/patterns/cardboard-flat.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
-/* body::before{
-    content: '';
-    position: fixed;
+body::before {
+    content: '';        /* required for ::before to appear */
+    position: fixed;    /* stays in place while scrolling */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/assets/images/bg/guidePage-bg.jpg');
-    filter: blur(80px); 
-    z-index: -2; 
-}
 
- */
+    background-image: var(--bg-image);
+    background-position: center;
+    background-size: cover;
 
+    filter: blur(7px);     /* main body bg blur amount */
 
-
-
-
-/* body::before,
-body::after {
-    content: '';
-    position: absolute;
-    filter: blur(100px);
     z-index: -1;
-    pointer-events: none;   
+    transition: background-image 5s ease-in-out;
 }
-
-body::before {
-    width: 500px;
-    height: 400px;
-    top: 10%;
-    left: 5%;
-    background-color: rgba(8, 199, 72, 0.2);   
-}
-
-body::after {
-    width: 400px;
-    height: 400px;
-    bottom: 5%;
-    right: 5%;
-    background-color: rgba(43, 180, 168, 0.15);
-} */
 
 
 .navbar{
@@ -75,19 +47,23 @@ body::after {
 
 /* Each full-page section */
 section {
+    position: relative;
     width: 100%;
-    height: 90vh;
-    /* Show 10vh of next section */
+    height: 95vh;
 
     scroll-snap-align: start;
     padding: 2rem 0;
     display: flex;
     align-items: center;
+    color: white;
+    overflow: hidden; /* for blur edge hiding */
+
+    margin-bottom: 10px;      /* gap between each section */
 }
 
 /* Scroll wrapper */
 .scroll-container {
-    height: 100vh;
+    height: 95vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
@@ -101,10 +77,6 @@ section {
 .container{
     max-width: 1200px;  /* whole page width */
 }
-
-
-
-
 
 .plantImage{
     display: flex;
@@ -121,37 +93,74 @@ section {
 
 
 /* Sample sections */
-.section1 {
-    background: blue;
-    color: white;
+.section1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(31, 89, 69, 0.6), rgba(65, 155, 118, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section4::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section5::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section6::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+.section7::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(to bottom, rgba(74, 89, 31, 0.6), rgba(136, 155, 65, 0.6));
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: -1;
 }
 
-.section2 {
-    background: red;
-    color: white;
-}
-
-.section3 {
-    background: rgb(0, 98, 255);
-    color: white;
-}
-
-.section4 {
-    background: rgb(191, 191, 28);
-    color: white;
-}
-
-.section5 {
-    background: rgb(27, 152, 21);
-    color: white;
-}
-
-.section6 {
-    background: rgb(171, 29, 223);
-    color: white;
-}
-
-.section7 {
-    background: rgb(158, 29, 50);
-    color: white;
-}
