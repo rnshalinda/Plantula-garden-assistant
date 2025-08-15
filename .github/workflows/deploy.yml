@@ -16,8 +16,8 @@ jobs:
 
       - name: Replace placeholders in guide.js
         run: |
-          sed -i "s/__AI_API_KEY__/${{ secrets.AI_API_KEY }}/g" guide.js
-          sed -i "s/__PIXABAY_API_KEY__/${{ secrets.PIXABAY_API_KEY }}/g" guide.js
+          sed -i "s/__AI_API_KEY__/${{ secrets.AI_API_KEY }}/g" src/guide.js
+          sed -i "s/__PIXABAY_API_KEY__/${{ secrets.PIXABAY_API_KEY }}/g" src/guide.js
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
