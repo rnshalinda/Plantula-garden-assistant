@@ -4,31 +4,55 @@ let storedPromt = sessionStorage.getItem('sharedData');
 let promts = storedPromt ? JSON.parse(storedPromt) : null;
 
 
-// OpenRouter API
-const AI_KEY = "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";
+
+// Gemini API call
+const AI_KEY = "AIzaSyAMG9-fgiFvZBPk06XzZfpxdqqA1NWfhTg";
 
 async function callAPI(promptText) {
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${AI_KEY}`,
-        },
-        body: JSON.stringify({
-            model: "google/gemma-3n-e4b-it:free", // or "mistralai/mistral-7b-instruct"
-            messages: [
-                {
-                    role: "user",
-                    content: promptText
-                }
-            ]
-        })
-    });
+    const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${AI_KEY}`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                contents: [{ parts: [{ text: promptText }] }],
+            }),
+        }
+    );
 
     const data = await res.json();
-    console.log("OpenRouter response:", data);
-    return cleanAIResponse(data.choices?.[0]?.message?.content || "No response");   // clean the response (unwanted charactors) and return
+    //console.log(data.candidates?.[0]?.content?.parts?.[0]?.text || "No response");
+    return cleanAIResponse(data.candidates?.[0]?.content?.parts?.[0]?.text || "No response");
 }
+
+
+// OpenRouter API call
+// const AI_KEY = "AIzaSyAMG9-fgiFvZBPk06XzZfpxdqqA1NWfhTg";
+
+// async function callAPI(promptText) {
+//     const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json",
+//             "Authorization": `Bearer ${AI_KEY}`,
+//         },
+//         body: JSON.stringify({
+//             model: "google/gemma-3n-e4b-it:free", // or "mistralai/mistral-7b-instruct"
+//             messages: [
+//                 {
+//                     role: "user",
+//                     content: promptText
+//                 }
+//             ]
+//         })
+//     });
+
+//     const data = await res.json();
+//     console.log("OpenRouter response:", data);
+//     return cleanAIResponse(data.choices?.[0]?.message?.content || "No response");   // clean the response (unwanted charactors) and return
+// }
 
 
 
