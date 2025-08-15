@@ -5,14 +5,16 @@ let promts = {}
 let plantName;
 let outcome;
 
-
 let formatString = `
         You are writing a section to be embedded inside a webpage.
-        Only return clean HTML content with basic tags like <h1>, <h2>, <p>, <ul>, <li>, <strong>, and <em>, accoording to the given instruction above if there are.
+        Only return clean HTML content with basic tags like <h2>, <p>, <ul>, <li>, <strong>, and <em>, according to the given instruction above.
         Do NOT include <html>, <head>, <body>, or <!DOCTYPE html>.
-        Seperate content from its heading by adding visual space.
-        Keep everything short, clear, and user-friendly.
+        Keep everything concise so the total visible text fits within about 15-20 lines on a laptop screen.
+        Limit lists of bullet points to 5 max.
+        Avoid unnecessary explanations — focus on the most essential and practical information.
+        If there is a heading (<h1>), separate it visually from the rest of the content with a blank line.
 `;
+
 
 // collect promt data from form
 document.getElementById('btn-gotoGuide').addEventListener('click', () => {

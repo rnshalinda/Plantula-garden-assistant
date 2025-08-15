@@ -83,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
     else{
         getPlantImage(sessionStorage.getItem('plantName'),sessionStorage.getItem('plantType'));
     }
-    // document.querySelector('.plantImage').innerHTML = `<img src="https://t1.pixers.pics/img-1fb6f67c/wall-murals-set-fruits-and-vegies.jpg?H4sIAAAAAAAAA3WOW2oDMQxFt2PDZORn7JkF5DdLCMaPdJp5GNttQlZfmdLPIsSVBFfnwtdeXYrg495igW0JYY2QlhW3OpdYl3ckbDBM0RmvK2GM0fn4jsWXI5OTtUNvM4nedH46NG6uPMhHa7nOAFWOeXnhNxRfwW8VBOMG2Bn0pJVTIlkfJnNrLsfmTo-nC8W1Me_3gfWifzEUY4Pq-FaWjWCeA0mNfOY7hX9ovzOgCy5X0BKsAMNhMv10u1y1tMJwhHuppODBRKHFWaJaw5OQMnlpgpvSiJQfRctl9ywBAAA=" style="border-radius: 15px; width:360px; height:280px;" alt="">`;
 });
 
 
@@ -91,14 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const PIXABAY_KEY = "__PIXABAY_API_KEY__";
 
 function getPlantImage(plantName, type){
-    console.log(type);
-    
     fetch(`https://pixabay.com/api/?key=${PIXABAY_KEY}&q=${plantName}+${type}&image_type=photo&pretty=true`).
     then(res => res.json()).
     then(data => {
         // console.log(data);
         let imgTag = document.querySelector('.plantImage');
-        imgTag.innerHTML = `<img src="${data.hits[0].webformatURL}" style="border-radius: 15px; width:75%; height:65%" alt="">`;
+        imgTag.innerHTML = `<img src="${data.hits[0].webformatURL}" style="border-radius: 15px; width:400px; height:300px" alt="">`;
         
     });
 }
@@ -156,13 +153,13 @@ function getPlantImage(plantName, type){
 
 
 let backgrounds = [
-    "url('/assets/images/bg/overview-bg1.webp')",
-    "url('/assets/images/bg/overview-bg2.webp')",
-    "url('/assets/images/bg/overview-bg3.webp')",
-    "url('/assets/images/bg/overview-bg4.webp')",
-    "url('/assets/images/bg/overview-bg5.webp')",
-    "url('/assets/images/bg/overview-bg6.webp')",
-    "url('/assets/images/bg/overview-bg7.webp')",
+    "url('../assets/images/bg/overview-bg1.webp')",
+    "url('../assets/images/bg/overview-bg2.webp')",
+    "url('../assets/images/bg/overview-bg3.webp')",
+    "url('../assets/images/bg/overview-bg4.webp')",
+    "url('../assets/images/bg/overview-bg5.webp')",
+    "url('../assets/images/bg/overview-bg6.webp')",
+    "url('../assets/images/bg/overview-bg7.webp')",
 ];
 
 const sections = document.querySelectorAll(".scroll-container section");
@@ -179,8 +176,9 @@ scrollContainer.addEventListener('scroll', () => {
 
     // Safety: clamp index to last section
     if (index >= backgrounds.length) index = backgrounds.length - 1;
-    console.log(index);
+    // console.log(index);
     
     // Change the CSS variable
     document.body.style.setProperty("--bg-image", backgrounds[index]);
 });
+
